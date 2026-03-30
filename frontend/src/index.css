@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* highlight.js theme for code blocks */
+@import "highlight.js/styles/github-dark.min.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #1a1a2e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Textarea auto-resize helper */
+textarea {
+  field-sizing: content;
+}
+
+/* Markdown prose overrides for dark theme */
+.prose pre {
+  background: #1a1b26 !important;
+  border: 1px solid #2d2f3d;
+  border-radius: 8px;
+}
+
+.prose code {
+  color: #e2e8f0 !important;
+  font-size: 0.875em;
+}
+
+.prose :not(pre) > code {
+  background: #2d2f3d;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none;
+}
